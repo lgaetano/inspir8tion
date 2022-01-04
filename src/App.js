@@ -10,7 +10,15 @@ export const URL = 'https://inspir8tion-board.herokuapp.com/boards';
 const App = () => {
     const [boards, setBoards] = useState([]);
     const [status, setStatus] = useState('Loading...');
+    const [isBoardFormVisible, setBoardForm] = useState(true);
   
+    const updateBoardFormVisibility = () => {
+      if (isBoardFormVisible === true)
+        setBoardForm(false)
+
+      else {setBoardForm(true)}
+    }
+
     useEffect(() => {
       axios
         .get(URL)
@@ -33,7 +41,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <NewBoardForm/>
+        <NewBoardForm isBoardFormVisible={isBoardFormVisible} updateBoardFormVisibility={updateBoardFormVisibility}/>
         <Board />
       </header>
       <main>

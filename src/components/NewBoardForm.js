@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './NewBoardForm.css';
 
-const NewBoardForm = ({addBoardCallback}) => {
+const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisibility}) => {
+  const buttonVisible = isBoardFormVisible ? 'visible' : 'hidden';
+  const buttonName = isBoardFormVisible ? 'Hide' : 'Show';
+
   const [formFields,setFormFields] = useState ({
     title: "",
     owner: ""
@@ -40,7 +43,11 @@ const NewBoardForm = ({addBoardCallback}) => {
   
   
     return (
-        <form onSubmit={onFormSubmit}>
+      <div>
+        <button onClick={updateBoardFormVisibility}>
+              {buttonName} New Board Form
+        </button>
+        <form className={buttonVisible} onSubmit={onFormSubmit}>
             <div>
                 <label htmlFor="title">Title:</label>
                 <input name="title" value={formFields.title} onChange={onTitleChange} />
@@ -53,8 +60,9 @@ const NewBoardForm = ({addBoardCallback}) => {
                 type="submit"
                 value="Add Board" />
         </form>
+      </div>
     );
-  
+      
     
   };
   NewBoardForm.propTypes = {
