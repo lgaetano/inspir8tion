@@ -1,15 +1,52 @@
 import './App.css';
 import NewBoardForm from './components/NewBoardForm';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Board from './components/Board';
+import BoardList from './components/BoardList';
 
+export const URL = 'https://inspir8tion-board.herokuapp.com/boards';
 
+const App = () => {
+    const [boards, setBoards] = useState([]);
+    const [status, setStatus] = useState('Loading...');
+  
+    useEffect(() => {
+      axios
+        .get(URL)
+        .then((res) => {
+          const newBoards = res.data.map((board) => {
+            return {
+              id: board.board_id,
+              title: board.title,
+              owner: board.owner,
+            };
+          });
+          setStatus('Loaded');
+          setBoards(newBoards);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
 
-function App() {
   return (
     <div className="App">
       <header className="App-header">
         <NewBoardForm/>
+        <Board />
       </header>
+      <main>
+      <div>
+          {status === 'Loading...' ? (
+            `${status}`
+          ) : (
+            <BoardList
+              boards={boards}
+            />
+          )}
+        </div>
+      </main>
     </div>
   );
 }
