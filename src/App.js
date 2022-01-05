@@ -9,28 +9,32 @@ import NewCardForm from "./components/NewCardForm";
 
 export const URL = "https://inspir8tion-board.herokuapp.com/";
 const CARDS_DATA = {
-  "cards": [
-      {
-          "board_id": 1,
-          "card_id": 1,
-          "likes_count": 0,
-          "message": "Blertyy blerty blaaaah blaaaahh"
-      },
-      {
-          "board_id": 1,
-          "card_id": 3,
-          "likes_count": 0,
-          "message": "New_message"
-      }
+  cards: [
+    {
+      board_id: 1,
+      card_id: 1,
+      likes_count: 0,
+      message: "Blertyy blerty blaaaah blaaaahh",
+    },
+    {
+      board_id: 1,
+      card_id: 3,
+      likes_count: 0,
+      message: "New_message",
+    },
   ],
-  "id": 1,
-  "title": "Blabla"
-}
+  id: 1,
+  title: "Blabla",
+};
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [status, setStatus] = useState("Loading...");
   const [isBoardFormVisible, setBoardForm] = useState(true);
-  const [selectedBoard, setSelectedBoard] = useState(null);
+  const [selectedBoard, setSelectedBoard] = useState({
+    id: null,
+    owner: "",
+    title: "",
+  });
 
   const updateBoardFormVisibility = () => {
     if (isBoardFormVisible === true) setBoardForm(false);
@@ -39,13 +43,14 @@ const App = () => {
     }
   };
 
-  const onBoardSelect = (title, owner) => {
-    setSelectedBoard(`${title} - ${owner}`);
+  const onBoardSelect = (board) => {
+    // setSelectedBoard(`${title} - ${owner}`);
+    setSelectedBoard(board);
   };
 
   // *** CONNECTING TO THE API *** //
 
-  // GET Boards 
+  // GET Boards
   useEffect(() => {
     axios
       .get(`${URL}/boards`)
@@ -65,7 +70,7 @@ const App = () => {
       });
   }, []);
 
-  // POST Boards 
+  // POST Boards
   const addBoardCallback = (board) => {
     const newBoard = board;
     axios
@@ -76,31 +81,28 @@ const App = () => {
           title: res.data.title,
           owner: res.data.owner,
         };
-        setBoards([...boards, newBoard])
+        setBoards([...boards, newBoard]);
       })
       .catch((err) => {
         console.log(err);
-        console.log('error response:', err.response);
+        console.log("error response:", err.response);
       });
-  }
+  };
 
   // POST Cards
   // const addCardCallback = (board_id, message) => {
   const addCardCallback = (message) => {
-
     const newCardMessage = message;
     axios
-      // .post(`${URL}/${board_id}/cards`, newCardMessage)
-      .post(`${URL}/1/cards`, newCardMessage)
+      .post(`${URL}/boards/${selectedBoard.id}/cards`, newCardMessage)
+      // .post(`${URL}/1/cards`, newCardMessage)
       // .then(() => setTasks(newTasks))
       .catch((err) => console.log(err));
-  }
+  };
 
   return (
     <div className="App">
-      <header className="App-header">
-        Our awesome board... in progress
-      </header>
+      <header className="App-header">Our awesome board... in progress</header>
       <main>
         <div>
           {status === "Loading..." ? (
@@ -109,26 +111,27 @@ const App = () => {
             <BoardList boards={boards} onBoardSelect={onBoardSelect} />
           )}
         </div>
-        {selectedBoard === null ? (
-          <p>"Select a Board from the Board List!"</p>
-        ) : selectedBoard}
+        {selectedBoard.id === null ? (
+          <p>Select a Board from the Board List!</p>
+        ) : (
+          `${selectedBoard.title} - ${selectedBoard.owner}`
+        )}
         {/* null above should eventually be setSelectedBoard*/}
         {/* <div>
           <Board onBoardSelect={selectedBoard} boards={boards} />
         </div> */}
         <div>
-        <NewBoardForm
-          isBoardFormVisible={isBoardFormVisible}
-          updateBoardFormVisibility={updateBoardFormVisibility}
-          addBoardCallback={addBoardCallback}
-        />
+          <NewBoardForm
+            isBoardFormVisible={isBoardFormVisible}
+            updateBoardFormVisibility={updateBoardFormVisibility}
+            addBoardCallback={addBoardCallback}
+          />
         </div>
         <div>
-          <CardList cards={CARDS_DATA}/>
+          <CardList cards={CARDS_DATA} />
         </div>
         <div>
-          <NewCardForm
-            addCardCallback={addCardCallback}/>
+          <NewCardForm addCardCallback={addCardCallback} />
         </div>
       </main>
     </div>
