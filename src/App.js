@@ -21,7 +21,7 @@ const App = () => {
   };
   /** */
   const onBoardSelect = (title, owner) => {
-    console.log(`${title} + "-" + ${owner}`);
+    setSelectedBoard(`${title} - ${owner}`);
   };
 
   useEffect(() => {
@@ -46,10 +46,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <NewBoardForm
-          isBoardFormVisible={isBoardFormVisible}
-          updateBoardFormVisibility={updateBoardFormVisibility}
-        />
+        Our awesome board... in progress
       </header>
       <main>
         <div>
@@ -60,12 +57,18 @@ const App = () => {
           )}
         </div>
         {selectedBoard === null ? (
-          <div>"Select a Board from the Board List!"</div>
-        ) : null}
+          <p>"Select a Board from the Board List!"</p>
+        ) : selectedBoard}
         {/* null above should eventually be setSelectedBoard*/}
         {/* <div>
           <Board onBoardSelect={selectedBoard} boards={boards} />
         </div> */}
+        <div>
+        <NewBoardForm
+          isBoardFormVisible={isBoardFormVisible}
+          updateBoardFormVisibility={updateBoardFormVisibility}
+        />
+        </div>
       </main>
     </div>
   );
