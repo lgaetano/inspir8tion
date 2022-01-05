@@ -33,7 +33,7 @@ const NewCardForm = ({addCardCallback}) => {
         <form onSubmit={onFormSubmit}>
             <div>
                 <label htmlFor="message">Message:</label>
-                <input name="messsage" value={formFields.message} onChange={onMessageChange} />
+                <input name="message" value={formFields.message} onChange={onMessageChange} />
             </div>
             <input
                 type="submit"

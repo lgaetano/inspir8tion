@@ -5,7 +5,7 @@ import axios from "axios";
 import Board from "./components/Board";
 import BoardList from "./components/BoardList";
 import CardList from "./components/CardList";
-
+import NewCardForm from "./components/NewCardForm";
 
 export const URL = "https://inspir8tion-board.herokuapp.com/boards";
 const CARDS_DATA = {
@@ -62,6 +62,17 @@ const App = () => {
       });
   }, []);
 
+  // const addCardCallback = (board_id, message) => {
+  const addCardCallback = (message) => {
+
+    const newCardMessage = message;
+    axios
+      // .post(`${URL}/${board_id}/cards`, newCardMessage)
+      .post(`${URL}/1/cards`, newCardMessage)
+      // .then(() => setTasks(newTasks))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -90,6 +101,10 @@ const App = () => {
         </div>
         <div>
           <CardList cards={CARDS_DATA}/>
+        </div>
+        <div>
+          <NewCardForm
+            addCardCallback={addCardCallback}/>
         </div>
       </main>
     </div>
