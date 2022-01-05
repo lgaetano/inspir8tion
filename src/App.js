@@ -128,10 +128,12 @@ const App = () => {
           />
         </div>
         <div>
-          <CardList cards={CARDS_DATA} />
+        {selectedBoard.id === null ? (null) : 
+        (<CardList cards={CARDS_DATA} />)}
         </div>
         <div>
-          <NewCardForm addCardCallback={addCardCallback} />
+        {selectedBoard.id === null ? (null) : 
+        (<NewCardForm addCardCallback={addCardCallback}/>)}
         </div>
       </main>
     </div>
