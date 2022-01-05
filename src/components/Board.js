@@ -6,9 +6,10 @@ const Board = (props) => {
   // console.log(title);
   return (
     <div>
-      <li onClick={props.chooseBoard}>Title column: {props.title}</li>
-
-      <h2>{props.onBoardSelect}</h2>
+      <li onClick={() => props.onBoardSelect(props.title, props.owner)}>
+        Title column: {props.title}
+        {/** will want to pull in board so above would be props.board.title */}
+      </li>
     </div>
   );
 };

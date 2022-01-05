@@ -11,9 +11,7 @@ const App = () => {
   const [boards, setBoards] = useState([]);
   const [status, setStatus] = useState("Loading...");
   const [isBoardFormVisible, setBoardForm] = useState(true);
-  const [selectedBoard, setSelectedBoard] = useState(
-    "Select a Board from the Board List!"
-  );
+  const [selectedBoard, setSelectedBoard] = useState(null);
 
   const updateBoardFormVisibility = () => {
     if (isBoardFormVisible === true) setBoardForm(false);
@@ -21,8 +19,8 @@ const App = () => {
       setBoardForm(true);
     }
   };
-
-  const chooseBoard = (title, owner) => {
+  /** */
+  const onBoardSelect = (title, owner) => {
     console.log(`${title} + "-" + ${owner}`);
   };
 
@@ -58,16 +56,16 @@ const App = () => {
           {status === "Loading..." ? (
             `${status}`
           ) : (
-            <BoardList boards={boards} />
+            <BoardList boards={boards} onBoardSelect={onBoardSelect} />
           )}
         </div>
-        <div>
-          <Board
-            onBoardSelect={selectedBoard}
-            boards={boards}
-            chooseBoard={chooseBoard}
-          />
-        </div>
+        {selectedBoard === null ? (
+          <div>"Select a Board from the Board List!"</div>
+        ) : null}
+        {/* null above should eventually be setSelectedBoard*/}
+        {/* <div>
+          <Board onBoardSelect={selectedBoard} boards={boards} />
+        </div> */}
       </main>
     </div>
   );
