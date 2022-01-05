@@ -4,9 +4,28 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Board from "./components/Board";
 import BoardList from "./components/BoardList";
+import CardList from "./components/CardList";
+
 
 export const URL = "https://inspir8tion-board.herokuapp.com/boards";
-
+const CARDS_DATA = {
+  "cards": [
+      {
+          "board_id": 1,
+          "card_id": 1,
+          "likes_count": 0,
+          "message": "Blertyy blerty blaaaah blaaaahh"
+      },
+      {
+          "board_id": 1,
+          "card_id": 3,
+          "likes_count": 0,
+          "message": "New_message"
+      }
+  ],
+  "id": 1,
+  "title": "Blabla"
+}
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [status, setStatus] = useState("Loading...");
@@ -68,6 +87,9 @@ const App = () => {
           isBoardFormVisible={isBoardFormVisible}
           updateBoardFormVisibility={updateBoardFormVisibility}
         />
+        </div>
+        <div>
+          <CardList cards={CARDS_DATA}/>
         </div>
       </main>
     </div>
