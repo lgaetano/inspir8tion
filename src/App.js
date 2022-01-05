@@ -7,7 +7,7 @@ import BoardList from "./components/BoardList";
 import CardList from "./components/CardList";
 import NewCardForm from "./components/NewCardForm";
 
-export const URL = "https://inspir8tion-board.herokuapp.com/boards";
+export const URL = "https://inspir8tion-board.herokuapp.com/";
 const CARDS_DATA = {
   "cards": [
       {
@@ -38,14 +38,17 @@ const App = () => {
       setBoardForm(true);
     }
   };
-  /** */
+
   const onBoardSelect = (title, owner) => {
     setSelectedBoard(`${title} - ${owner}`);
   };
 
+  // *** CONNECTING TO THE API *** //
+
+  // GET Boards 
   useEffect(() => {
     axios
-      .get(URL)
+      .get(`${URL}/boards`)
       .then((res) => {
         const newBoards = res.data.map((board) => {
           return {
@@ -62,6 +65,26 @@ const App = () => {
       });
   }, []);
 
+  // POST Boards 
+  const addBoardCallback = (board) => {
+    const newBoard = board;
+    axios
+      .post(`${URL}/boards`, newBoard)
+      .then((res) => {
+        const newBoard = {
+          id: res.data.board_id,
+          title: res.data.title,
+          owner: res.data.owner,
+        };
+        setBoards([...boards, newBoard])
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log('error response:', err.response);
+      });
+  }
+
+  // POST Cards
   // const addCardCallback = (board_id, message) => {
   const addCardCallback = (message) => {
 
@@ -97,6 +120,7 @@ const App = () => {
         <NewBoardForm
           isBoardFormVisible={isBoardFormVisible}
           updateBoardFormVisibility={updateBoardFormVisibility}
+          addBoardCallback={addBoardCallback}
         />
         </div>
         <div>

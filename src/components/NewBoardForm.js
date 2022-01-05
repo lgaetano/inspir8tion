@@ -6,10 +6,10 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
   const buttonVisible = isBoardFormVisible ? 'visible' : 'hidden';
   const buttonName = isBoardFormVisible ? 'Hide' : 'Show';
 
-  const [formFields,setFormFields] = useState ({
-    title: "",
-    owner: ""
-  })
+  const [formFields, setFormFields] = useState ({
+    title: '',
+    owner: ''
+  });
   
   const onTitleChange = (event) => {
     setFormFields({
@@ -29,18 +29,16 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
     event.preventDefault();
   
           addBoardCallback({
-              titleData: formFields.title,
-              ownerData: formFields.owner
+              title: formFields.title,
+              owner: formFields.owner
           });
   
           setFormFields({
               title: '',
               owner: '',
           });
-  
+
   };
-  
-  
   
     return (
       <div>
@@ -50,11 +48,17 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
         <form className={buttonVisible} onSubmit={onFormSubmit}>
             <div>
                 <label htmlFor="title">Title:</label>
-                <input name="title" value={formFields.title} onChange={onTitleChange} />
+                <input 
+                  name="title" 
+                  value={formFields.title} 
+                  onChange={onTitleChange} />
             </div>
             <div>
-                <label htmlFor="owner" value={formFields.owner} onChange={onOwnerChange}>Owner:</label>
-                <input name="owner" />
+                <label htmlFor="owner" >Owner:</label>
+                <input 
+                  name="owner"
+                  value={formFields.owner} 
+                  onChange={onOwnerChange} />
             </div>
             <input
                 type="submit"
