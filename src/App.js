@@ -18,6 +18,11 @@ const App = () => {
     owner: "",
     title: "",
   });
+  const [selectedCard, setSelectedCard] = useState({
+    id: null,
+    likes_count: 0,
+    message: "",
+  });
 
   const updateBoardFormVisibility = () => {
     if (isBoardFormVisible === true) setBoardForm(false);
@@ -83,6 +88,11 @@ const App = () => {
       .catch((err) => console.log(err));
   };
 
+  // DELETE Cards
+  const onCardSelect = (card) => {
+    setSelectedCard(card);
+  };
+
   return (
     <div className="App">
       <header className="App-header">Our awesome board... in progress</header>
@@ -112,7 +122,7 @@ const App = () => {
         </div>
         <div>
         {selectedBoard.id === null ? (null) : 
-        (<CardList selectedBoard={selectedBoard} />)}
+        (<CardList selectedBoard={selectedBoard} onCardSelect={onCardSelect} />)}
         </div>
         <div>
         {selectedBoard.id === null ? (null) : 

@@ -28,15 +28,27 @@ const CardList = (props) => {
         console.log(err);
       });
   }, [props.selectedBoard.id]);
+
+  const onCardDelete = (selectedCard) => {
+    axios
+    .delete(`https://inspir8tion-board.herokuapp.com/cards/${selectedCard.id}`)
+    .then((response) => {
+      console.log(response.data)
+    });
+    const newCards = cards.filter((card) => card.id !== selectedCard.id);
+    setCards(newCards)
+  }
+
   const getCardsList = cards.map((card) => {
     return (
       <Card
         card={card}
+        onCardDelete={onCardDelete}
       />
     );
   });
   return <ul>{getCardsList}</ul>;
-  
+
 };
 
 export default CardList;

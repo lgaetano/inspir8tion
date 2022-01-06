@@ -11,6 +11,7 @@ const Card = (props) => {
       <li>Likes: {props.card.likes_count}</li>
         {/** will want to pull in board so above would be props.board.title */}
         <li>+1</li>
+      <li onClick={() => props.onCardDelete(props.card)}>Delete</li>
       </ul>
     </div>
   );
