@@ -3,8 +3,6 @@ import Card from "./Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-
 const CardList = (props) => {
   const [cards, setCards] = useState([]);
   const [cardsStatus, setCardsStatus] = useState("Loading...");
@@ -12,7 +10,6 @@ const CardList = (props) => {
   useEffect(() => {
     axios
       .get(`https://inspir8tion-board.herokuapp.com/boards/${props.selectedBoard.id}/cards`)
-      // console.log(props.selectedBoard.id)
       .then((res) => {
         const newCards = res.data.cards.map((card) => {
           return {
@@ -27,7 +24,7 @@ const CardList = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [props.selectedBoard.id]);
+  }, [props.selectedBoard.id, cards]);
 
   const onCardDelete = (selectedCard) => {
     axios
@@ -35,8 +32,6 @@ const CardList = (props) => {
     .then((response) => {
       console.log(response.data)
     });
-    const newCards = cards.filter((card) => card.id !== selectedCard.id);
-    setCards(newCards)
   }
 
   const getCardsList = cards.map((card) => {
