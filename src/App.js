@@ -78,35 +78,37 @@ const App = () => {
   };
 
   return (
+    <html>
     <div className="App">
-      <header className="App-header">Our awesome board... in progress</header>
       <main>
-        <div>
+      <header className="App-header">Inspir8tion</header>
+        <div className="BoardList">
           {status === "Loading..." ? (`${status}`) : (
           <BoardList 
             boards={boards} 
             onBoardSelect={onBoardSelect} 
           />)}
-        </div>
           {selectedBoard.id === null ? (<p>Select a Board from the Board List!</p>) : (
-            `${selectedBoard.title} - ${selectedBoard.owner}`
+            `Selected board:${selectedBoard.title} - ${selectedBoard.owner}`
           )}
+        </div>
         {/* null above should eventually be setSelectedBoard*/}
         {/* <div>
           <Board onBoardSelect={selectedBoard} boards={boards} />
         </div> */}
-        <div>
+        <div className="NewBoardForm">
           <NewBoardForm
             isBoardFormVisible={isBoardFormVisible}
             updateBoardFormVisibility={updateBoardFormVisibility}
             addBoardCallback={addBoardCallback}
           />
         </div>
-        <div>
+        <div className="CardList">
           {selectedBoard.id === null ? (null) : (<CardList selectedBoard={selectedBoard} />)}
         </div>
       </main>
     </div>
+    </html>
   );
 };
 

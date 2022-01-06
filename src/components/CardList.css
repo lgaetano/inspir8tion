@@ -1,0 +1,16 @@
+.NewCardForm {
+    grid-area: 1 / 2 / 3 / 3;
+    border: 1px solid red;
+
+
+}
+
+.CardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  border: 1px solid red;
+  height: 100%;
+}

@@ -3,6 +3,7 @@ import axios from "axios";
 import PropTypes from 'prop-types';
 import Card from "./Card";
 import NewCardForm from "./NewCardForm";
+import "./CardList.css";
 
 const URL = "https://inspir8tion-board.herokuapp.com/";
 
@@ -87,13 +88,13 @@ const CardList = (props) => {
   });
 
   return (
-      <>
+      <div className="CardsContainer">
         <ul>{getCardsList}</ul>
 
-        <section>
+        <section className="NewCardForm">
           {props.selectedBoard.id === null ? (null) : (<NewCardForm addCardCallback={addCardCallback}/>)}
         </section>
-      </>
+      </div>
     );
 
 };
