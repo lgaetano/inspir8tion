@@ -8,24 +8,7 @@ import CardList from "./components/CardList";
 import NewCardForm from "./components/NewCardForm";
 
 export const URL = "https://inspir8tion-board.herokuapp.com/";
-const CARDS_DATA = {
-  cards: [
-    {
-      board_id: 1,
-      card_id: 1,
-      likes_count: 0,
-      message: "Blertyy blerty blaaaah blaaaahh",
-    },
-    {
-      board_id: 1,
-      card_id: 3,
-      likes_count: 0,
-      message: "New_message",
-    },
-  ],
-  id: 1,
-  title: "Blabla",
-};
+
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [status, setStatus] = useState("Loading...");
@@ -129,7 +112,7 @@ const App = () => {
         </div>
         <div>
         {selectedBoard.id === null ? (null) : 
-        (<CardList cards={CARDS_DATA} />)}
+        (<CardList selectedBoard={selectedBoard} />)}
         </div>
         <div>
         {selectedBoard.id === null ? (null) : 
