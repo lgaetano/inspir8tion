@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import PropTypes from 'prop-types';
 import axios from "axios";
+import PropTypes from 'prop-types';
 import Card from "./Card";
 import NewCardForm from "./NewCardForm";
 
@@ -80,7 +80,6 @@ const CardList = (props) => {
       <Card
         key={card.id}
         card={card}
-        addCardCallback={addCardCallback}
         onCardDelete={onCardDelete}
         onLike={onLike}
       />
@@ -89,16 +88,22 @@ const CardList = (props) => {
 
   return (
       <>
-        <div>
-          <ul>{getCardsList}</ul>
-        </div>
-        
-        <div>
+        <ul>{getCardsList}</ul>
+
+        <section>
           {props.selectedBoard.id === null ? (null) : (<NewCardForm addCardCallback={addCardCallback}/>)}
-        </div>
+        </section>
       </>
     );
 
+};
+
+CardList.propTypes = {
+  selectedBoard: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    owner: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CardList;

@@ -105,9 +105,6 @@ const App = () => {
         <div>
           {selectedBoard.id === null ? (null) : (<CardList selectedBoard={selectedBoard} />)}
         </div>
-        <div>
-          {/* {selectedBoard.id === null ? (null) : (<NewCardForm />)} */}
-        </div>
       </main>
     </div>
   );

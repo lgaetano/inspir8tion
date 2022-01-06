@@ -29,29 +29,26 @@ const NewCardForm = ({ addCardCallback }) => {
   };
   
     return (
-      <div>
-        <form onSubmit={onFormSubmit}>
-            <div>
-                <label htmlFor="message">Message:</label>
-                <input 
-                  name="message" 
-                  value={formFields.message} 
-                  onChange={onMessageChange} 
-                />
-            </div>
-            <input
-                type="submit"
-                value="Add Card" 
-            />
-        </form>
-      </div>
+      <form onSubmit={onFormSubmit}>
+          <div>
+              <label htmlFor="message">Message:</label>
+              <input 
+                name="message" 
+                value={formFields.message} 
+                onChange={onMessageChange} 
+              />
+          </div>
+          <input
+              type="submit"
+              value="Add Card" 
+          />
+      </form>
     );
-      
-    
   };
+
   NewCardForm.propTypes = {
     addCardCallback: PropTypes.func.isRequired
   };
   
-  
+
   export default NewCardForm;

@@ -1,9 +1,9 @@
-// import React from 'react';
+import PropTypes from "prop-types";
 import Board from "./Board";
 
 const BoardList = ({ boards, onBoardSelect }) => {
-  console.log(boards);
-  const getBoardListJSX = (boards) => {
+
+  const getBoardList = (boards) => {
     return boards.map((board) => {
       return (
         <Board
@@ -17,8 +17,12 @@ const BoardList = ({ boards, onBoardSelect }) => {
       );
     });
   };
-  return <ul>{getBoardListJSX(boards)}</ul>;
+  return <ul>{getBoardList(boards)}</ul>;
+};
+
+BoardList.propTypes = {
+  boards: PropTypes.array.isRequired,
+  onBoardSelect: PropTypes.func,
 };
 
 export default BoardList;
-/* will just pass props board through to Board */

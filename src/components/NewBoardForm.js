@@ -41,7 +41,7 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
   };
   
     return (
-      <div>
+      <section>
         <button onClick={updateBoardFormVisibility}>
               {buttonName} New Board Form
         </button>
@@ -64,14 +64,12 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
                 type="submit"
                 value="Add Board" />
         </form>
-      </div>
+      </section>
     );
-      
-    
   };
+
   NewBoardForm.propTypes = {
     addBoardCallback: PropTypes.func.isRequired
   };
-  
   
   export default NewBoardForm;
