@@ -1,13 +1,11 @@
 import "./App.css";
-import NewBoardForm from "./components/NewBoardForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Board from "./components/Board";
 import BoardList from "./components/BoardList";
 import CardList from "./components/CardList";
-import NewCardForm from "./components/NewCardForm";
+import NewBoardForm from "./components/NewBoardForm";
 
-export const URL = "https://inspir8tion-board.herokuapp.com/";
+const URL = "https://inspir8tion-board.herokuapp.com/";
 
 const App = () => {
   const [boards, setBoards] = useState([]);
@@ -18,12 +16,8 @@ const App = () => {
     owner: "",
     title: "",
   });
-  const [selectedCard, setSelectedCard] = useState({
-    id: null,
-    likes_count: 0,
-    message: "",
-  });
 
+  // Make BoardForm (dis)appear
   const updateBoardFormVisibility = () => {
     if (isBoardFormVisible === true) setBoardForm(false);
     else {
@@ -31,14 +25,12 @@ const App = () => {
     }
   };
 
+  // Select a board
   const onBoardSelect = (board) => {
-    // setSelectedBoard(`${title} - ${owner}`);
     setSelectedBoard(board);
   };
 
-  // *** CONNECTING TO THE API *** //
-
-  // GET Boards
+  // GET all boards
   useEffect(() => {
     axios
       .get(`${URL}/boards`)
@@ -58,7 +50,7 @@ const App = () => {
       });
   }, []);
 
-  // POST Boards
+  // POST a board
   const addBoardCallback = (board) => {
     const newBoard = board;
     axios
@@ -77,20 +69,12 @@ const App = () => {
       });
   };
 
-  // POST Cards
-  // const addCardCallback = (board_id, message) => {
+  // POST a card
   const addCardCallback = (message) => {
     const newCardMessage = message;
     axios
       .post(`${URL}/boards/${selectedBoard.id}/cards`, newCardMessage)
-      // .post(`${URL}/1/cards`, newCardMessage)
-      // .then(() => setTasks(newTasks))
       .catch((err) => console.log(err));
-  };
-
-  // DELETE Cards
-  const onCardSelect = (card) => {
-    setSelectedCard(card);
   };
 
   return (
@@ -98,17 +82,15 @@ const App = () => {
       <header className="App-header">Our awesome board... in progress</header>
       <main>
         <div>
-          {status === "Loading..." ? (
-            `${status}`
-          ) : (
-            <BoardList boards={boards} onBoardSelect={onBoardSelect} />
-          )}
+          {status === "Loading..." ? (`${status}`) : (
+          <BoardList 
+            boards={boards} 
+            onBoardSelect={onBoardSelect} 
+          />)}
         </div>
-        {selectedBoard.id === null ? (
-          <p>Select a Board from the Board List!</p>
-        ) : (
-          `${selectedBoard.title} - ${selectedBoard.owner}`
-        )}
+          {selectedBoard.id === null ? (<p>Select a Board from the Board List!</p>) : (
+            `${selectedBoard.title} - ${selectedBoard.owner}`
+          )}
         {/* null above should eventually be setSelectedBoard*/}
         {/* <div>
           <Board onBoardSelect={selectedBoard} boards={boards} />
@@ -121,12 +103,10 @@ const App = () => {
           />
         </div>
         <div>
-        {selectedBoard.id === null ? (null) : 
-        (<CardList selectedBoard={selectedBoard} onCardSelect={onCardSelect} />)}
+          {selectedBoard.id === null ? (null) : (<CardList selectedBoard={selectedBoard} />)}
         </div>
         <div>
-        {selectedBoard.id === null ? (null) : 
-        (<NewCardForm addCardCallback={addCardCallback}/>)}
+          {/* {selectedBoard.id === null ? (null) : (<NewCardForm />)} */}
         </div>
       </main>
     </div>

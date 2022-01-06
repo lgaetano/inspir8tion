@@ -3,7 +3,6 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 const Board = (props) => {
-  // console.log(title);
   return (
     <div>
       <li onClick={() => props.onBoardSelect(props.board)}>

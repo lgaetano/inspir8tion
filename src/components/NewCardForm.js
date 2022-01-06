@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './NewCardForm.css';
 
-const NewCardForm = ({addCardCallback}) => {
+const NewCardForm = ({ addCardCallback }) => {
 
   const [formFields,setFormFields] = useState ({
     message: ''
@@ -17,7 +17,7 @@ const NewCardForm = ({addCardCallback}) => {
   
   const onFormSubmit = (event) => {
     event.preventDefault();
-  
+    
           addCardCallback({
               message: formFields.message
           });
@@ -33,11 +33,16 @@ const NewCardForm = ({addCardCallback}) => {
         <form onSubmit={onFormSubmit}>
             <div>
                 <label htmlFor="message">Message:</label>
-                <input name="message" value={formFields.message} onChange={onMessageChange} />
+                <input 
+                  name="message" 
+                  value={formFields.message} 
+                  onChange={onMessageChange} 
+                />
             </div>
             <input
                 type="submit"
-                value="Add Card" />
+                value="Add Card" 
+            />
         </form>
       </div>
     );
