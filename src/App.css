@@ -83,8 +83,6 @@ h2 {
 
 }
 
-<<<<<<< HEAD
-=======
 .NewBoardForm {
   grid-area: 2 / 2 / 3 / 3; 
   
@@ -94,7 +92,6 @@ h2 {
   margin-right: 140px;
 }
 
->>>>>>> 7481c934e92720907158bd03969179c25578fc41
 .CardList {
   grid-area: 3 / 1 / 4 / 3;
   border: 40px solid outset rgb(249, 246, 246);
