@@ -89,7 +89,7 @@ const CardList = (props) => {
 
   return (
       <>
-        <h2>Inspiration Cards</h2>
+        <h2>{props.selectedBoard.title}&nbsp;&nbsp;—&nbsp;&nbsp;{props.selectedBoard.owner}</h2>
         <div className="CardsListContainer">
           
           <ul className="cardsContainer">{getCardsList}</ul>
@@ -97,7 +97,7 @@ const CardList = (props) => {
           <section className="NewCardForm">
             {props.selectedBoard.id === null ? (null) : (<NewCardForm addCardCallback={addCardCallback}/>)}
           </section>
-      </div>
+        </div>
       </>
     );
    
