@@ -11,10 +11,7 @@
 }
 
 .NewBoardHeader {
-  /* bad CSS oopsie */
-
     position: absolute;
-    /* width: 200px; */
     height: 43px;
     left: 844px;
     top: 337.65px;
@@ -95,10 +92,7 @@
 }
 
 .ShowHideButton {
-    /* this is bad css to get it lined up lol sorry it might break other parts */
-
     position: absolute;
-    /* width: 163px; */
     height: 50px;
     left: 115px;
     top: 260px;
