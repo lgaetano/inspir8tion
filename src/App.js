@@ -98,6 +98,9 @@ const App = () => {
         {/* <div>
           <Board onBoardSelect={selectedBoard} boards={boards} />
         </div> */}
+        <div className="NewBoardHeader">
+          <h2>New Boards</h2>
+        </div>
         <div className="NewBoardForm">
           <NewBoardForm
             isBoardFormVisible={isBoardFormVisible}
