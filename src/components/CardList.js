@@ -88,14 +88,19 @@ const CardList = (props) => {
   });
 
   return (
-      <div className="CardsContainer">
-        <ul>{getCardsList}</ul>
+      <>
+        <h2>Inspiration Cards</h2>
+        <div className="CardsListContainer">
+          
+          <ul className="cardsContainer">{getCardsList}</ul>
 
-        <section className="NewCardForm">
-          {props.selectedBoard.id === null ? (null) : (<NewCardForm addCardCallback={addCardCallback}/>)}
-        </section>
+          <section className="NewCardForm">
+            {props.selectedBoard.id === null ? (null) : (<NewCardForm addCardCallback={addCardCallback}/>)}
+          </section>
       </div>
+      </>
     );
+   
 
 };
 
