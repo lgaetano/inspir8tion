@@ -77,11 +77,6 @@ html {
   border: 1px solid red;
 }
 
-.NewBoardForm {
-  grid-area: 2 / 2 / 3 / 3; 
-  border: 1px solid red;
-}
-
 .CardList {
   grid-area: 3 / 1 / 4 / 3;;
   border: 1px solid red;

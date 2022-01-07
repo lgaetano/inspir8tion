@@ -1,11 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
+
 .hidden {
     display: none;
-    height: 0;
-    color: red;
-    border: red
 }
 
 .visible {
-    color: green
+    display: contents;
 }
 
+.NewBoardHeader {
+  /* bad CSS oopsie */
+
+    position: absolute;
+    /* width: 200px; */
+    height: 43px;
+    left: 844px;
+    top: 337.65px;
+
+    font-family: 'Aleo', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.NewBoardForm {
+    grid-area: 2 / 2 / 3 / 3; 
+    /* border: 1px solid red; */
+
+    position: absolute;
+    width: 442.9px;
+    /* height: 339.36px; */
+    height: 239.36px;
+    left: 844px;
+    top: 388px;
+
+    padding: 20px;
+
+    background: #EDF8EB;
+    border: 3px solid #A7DC9D;
+    box-sizing: border-box;
+    box-shadow: 0px 40px 60px -15px rgba(30, 135, 11, 0.27);
+    border-radius: 12px;
+}
+
+.NewBoardForm__form-input{
+    font-family: 'Proxima Nova', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 3px;
+
+    color: #000000;
+    padding: 16px;
+    margin-top: 10px;
+
+    background: #F6F6F6;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    }
+
+.NewBoardForm__form-submit-btn{
+    position: absolute;
+    width: 163px;
+    height: 50px;
+    left: 270px;
+    /* top: 279px; */
+    top: 179px;
+
+
+    font-family: 'Zilla Slab', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #27671B;
+    background: #A7DC9D;
+    padding: 14px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.ShowHideButton {
+    /* this is bad css to get it lined up lol sorry it might break other parts */
+
+    position: absolute;
+    /* width: 163px; */
+    height: 50px;
+    left: 115px;
+    top: 260px;
+
+    font-family: 'Proxima Nova', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+
+    background: #F6F6F6;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}

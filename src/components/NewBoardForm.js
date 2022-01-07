@@ -42,28 +42,37 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
   
     return (
       <section>
-        <button onClick={updateBoardFormVisibility}>
-              {buttonName} New Board Form
-        </button>
         <form className={buttonVisible} onSubmit={onFormSubmit}>
             <div>
-                <label htmlFor="title">Title:</label>
+                {/* <label htmlFor="title">Title:</label> */}
                 <input 
+                  class="NewBoardForm__form-input" 
                   name="title" 
                   value={formFields.title} 
-                  onChange={onTitleChange} />
+                  onChange={onTitleChange}
+                  placeholder="BOARD TITLE" />
             </div>
             <div>
-                <label htmlFor="owner" >Owner:</label>
+                {/* <label htmlFor="owner" >Owner:</label> */}
                 <input 
+                  class="NewBoardForm__form-input"
                   name="owner"
                   value={formFields.owner} 
-                  onChange={onOwnerChange} />
+                  onChange={onOwnerChange} 
+                  placeholder="OWNER NAME" />
             </div>
             <input
-                type="submit"
-                value="Add Board" />
+              class="NewBoardForm__form-submit-btn"
+              type="submit"
+              value="add new board" />
         </form>
+
+        <button 
+          class="ShowHideButton" 
+          onClick={updateBoardFormVisibility}>
+              {buttonName} New Board Form
+          </button>
+
       </section>
     );
   };
