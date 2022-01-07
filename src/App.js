@@ -79,40 +79,44 @@ const App = () => {
 
   return (
     <html>
-    <div className="App">
-      <main>
-      <header className="App-header">Inspir8tion</header>
-        <div className="BoardList">
-          <p>Boards</p>
-          {selectedBoard.id === null ? (<p className="SelectBoard">Select a Board from the Board List!</p>) : <p className="SelectedBoard">
-            Selected board: {selectedBoard.title}<br></br>
-            Owner: {selectedBoard.owner}
-          </p>}
-          {status === "Loading..." ? (`${status}`) : (
-          <BoardList 
-            boards={boards} 
-            onBoardSelect={onBoardSelect} 
-          />)}
-        </div>
-        {/* null above should eventually be setSelectedBoard*/}
-        {/* <div>
+      <div className="App">
+        <main>
+          <header className="App-header">Inspir8tion</header>
+          <div className="BoardList">
+            <h2>Boards</h2>
+            {selectedBoard.id === null ? (
+              <p className="SelectBoard">Select a Board from the Board List!</p>
+            ) : (
+              <p className="SelectedBoard">
+                Selected board: {selectedBoard.title}
+                <br></br>
+                Owner: {selectedBoard.owner}
+              </p>
+            )}
+            {status === "Loading..." ? (
+              `${status}`
+            ) : (
+              <BoardList boards={boards} onBoardSelect={onBoardSelect} />
+            )}
+          </div>
+          {/* null above should eventually be setSelectedBoard*/}
+          {/* <div>
           <Board onBoardSelect={selectedBoard} boards={boards} />
         </div> */}
-        <div className="NewBoardHeader">
-          <h2>New Boards</h2>
-        </div>
-        <div className="NewBoardForm">
-          <NewBoardForm
-            isBoardFormVisible={isBoardFormVisible}
-            updateBoardFormVisibility={updateBoardFormVisibility}
-            addBoardCallback={addBoardCallback}
-          />
-        </div>
-        <div className="CardList">
-          {selectedBoard.id === null ? (null) : (<CardList selectedBoard={selectedBoard} />)}
-        </div>
-      </main>
-    </div>
+          <div className="NewBoardForm">
+            <NewBoardForm
+              isBoardFormVisible={isBoardFormVisible}
+              updateBoardFormVisibility={updateBoardFormVisibility}
+              addBoardCallback={addBoardCallback}
+            />
+          </div>
+          <div className="CardList">
+            {selectedBoard.id === null ? null : (
+              <CardList selectedBoard={selectedBoard} />
+            )}
+          </div>
+        </main>
+      </div>
     </html>
   );
 };

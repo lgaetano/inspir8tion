@@ -4,110 +4,138 @@
 
 .hidden {
     display: none;
+    height: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #EDF8EB;
+    border: 3px solid #A7DC9D;
+    height: 290px;
+    width: 442.9px;
+    box-shadow: 0px 40px 60px -15px rgb(235 141 108 / 27%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 36px;
+    padding-bottom: 40px;
 }
 
 .visible {
-    display: contents;
-}
-
-.NewBoardHeader {
-    position: absolute;
-    height: 43px;
-    left: 844px;
-    top: 337.65px;
-
-    font-family: 'Aleo', serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 43px;
+    padding: 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-
-    color: #000000;
-}
-
-.NewBoardForm {
-    grid-area: 2 / 2 / 3 / 3; 
-    /* border: 1px solid red; */
-
-    position: absolute;
-    width: 442.9px;
-    /* height: 339.36px; */
-    height: 239.36px;
-    left: 844px;
-    top: 388px;
-
-    padding: 20px;
-
     background: #EDF8EB;
     border: 3px solid #A7DC9D;
-    box-sizing: border-box;
-    box-shadow: 0px 40px 60px -15px rgba(30, 135, 11, 0.27);
+    height: 290px;
+    width: 442.9px;
+    box-shadow: 0px 40px 60px -15px rgb(235 141 108 / 27%);
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 36px;
+    padding-bottom: 40px;
 }
 
-.NewBoardForm__form-input{
-    font-family: 'Proxima Nova', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 3px;
+/* .NewBoardForm {
+    grid-area: 1 / 2 / 3 / 3;
+    margin: 50px;
+    background: #EDF8EB;
+    border: 3px solid #A7DC9D;
+    height: 300.36px;
+    width: 442.9px;
+    box-shadow: 0px 40px 60px -15px rgba(235, 141, 108, 0.27);
+border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  } */
 
-    color: #000000;
-    padding: 16px;
+/* .NewBoardForm form {
+      padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #EDF8EB;
+    border: 3px solid #A7DC9D;
+    height: 290px;
+    width: 442.9px;
+    box-shadow: 0px 40px 60px -15px rgb(235 141 108 / 27%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 36px;
+    padding-bottom: 40px;
+} */
+
+
+.NewBoardForm .NewBoard-header {
+  text-align: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.TitleInput input {
+    background: #F6F6F6;
+    padding: 10px;
+    border: 0px;
+    color: black;
+    padding-bottom: 30px;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    position: static;
+    width: 409px;
+    height: 48px;
+    left: 0px;
+    top: 56px;
+    margin-bottom: 10px;
     margin-top: 10px;
-
-    background: #F6F6F6;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-    }
-
-.NewBoardForm__form-submit-btn{
-    position: absolute;
-    width: 163px;
-    height: 50px;
-    left: 270px;
-    /* top: 279px; */
-    top: 179px;
-
-
-    font-family: 'Zilla Slab', serif;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-
-    color: #27671B;
-    background: #A7DC9D;
-    padding: 14px;
-
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;  
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
 }
 
-.ShowHideButton {
-    position: absolute;
-    height: 50px;
-    left: 115px;
-    top: 260px;
-
-    font-family: 'Proxima Nova', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 16px;
-    letter-spacing: 3px;
-    text-transform: lowercase;
-
+.OwnerInput input {
     background: #F6F6F6;
+    padding: 10px;
+    border: 0px;
+    color: black;
+    padding-bottom: 30px;
+    width: 80%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
+    position: static;
+    width: 409px;
+    height: 48px;
+    left: 0px;
+    top: 56px;
+}
+
+/* #button */
+.SubmitButton {
+    background-color: #A7DC9D;
+    color: #27671B;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    top:60%;
+    float: right;
+
+}
+.NewBoardForm input:hover {
+  cursor: pointer;
+}
+
+
+.HideButton {
+    display: flex;
+    flex-direction: row;
 }

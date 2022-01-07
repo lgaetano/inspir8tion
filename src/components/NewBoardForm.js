@@ -41,39 +41,43 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
   };
   
     return (
-      <section>
+      <div>
+        <button className='HideButton' onClick={updateBoardFormVisibility}>
+              {buttonName} New Board Form
+        </button>
+      {/* <button onClick={updateBoardFormVisibility}>
+              {buttonName} New Board Form
+        </button> */}
+      {/* <section className='NewBoardForm'> */}
+        <h2>Add New Board:</h2>
+        
         <form className={buttonVisible} onSubmit={onFormSubmit}>
-            <div>
-                {/* <label htmlFor="title">Title:</label> */}
+            <div className='TitleInput'>
+                <label htmlFor="title"></label>
                 <input 
                   class="NewBoardForm__form-input" 
                   name="title" 
+                  placeholder='TITLE'
                   value={formFields.title} 
                   onChange={onTitleChange}
                   placeholder="BOARD TITLE" />
             </div>
-            <div>
-                {/* <label htmlFor="owner" >Owner:</label> */}
+            <div className="OwnerInput">
+                <label htmlFor="owner" ></label>
                 <input 
                   class="NewBoardForm__form-input"
                   name="owner"
+                  placeholder='OWNER'
                   value={formFields.owner} 
                   onChange={onOwnerChange} 
                   placeholder="OWNER NAME" />
             </div>
-            <input
-              class="NewBoardForm__form-submit-btn"
-              type="submit"
-              value="add new board" />
+            <input className='SubmitButton'
+                type="submit"
+                value="+ add board" />
         </form>
-
-        <button 
-          class="ShowHideButton" 
-          onClick={updateBoardFormVisibility}>
-              {buttonName} New Board Form
-          </button>
-
-      </section>
+      {/* </section> */}
+      </div>
     );
   };
 
