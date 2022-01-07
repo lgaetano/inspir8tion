@@ -83,14 +83,16 @@ const App = () => {
       <main>
       <header className="App-header">Inspir8tion</header>
         <div className="BoardList">
+          <p>Boards</p>
+          {selectedBoard.id === null ? (<p className="SelectBoard">Select a Board from the Board List!</p>) : <p className="SelectedBoard">
+            Selected board: {selectedBoard.title}<br></br>
+            Owner: {selectedBoard.owner}
+          </p>}
           {status === "Loading..." ? (`${status}`) : (
           <BoardList 
             boards={boards} 
             onBoardSelect={onBoardSelect} 
           />)}
-          {selectedBoard.id === null ? (<p>Select a Board from the Board List!</p>) : (
-            `Selected board:${selectedBoard.title} - ${selectedBoard.owner}`
-          )}
         </div>
         {/* null above should eventually be setSelectedBoard*/}
         {/* <div>

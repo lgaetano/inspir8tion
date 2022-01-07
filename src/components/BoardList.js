@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import Board from "./Board";
+import "./BoardList.css";
 
 const BoardList = ({ boards, onBoardSelect }) => {
 
   const getBoardList = (boards) => {
-    return boards.map((board) => {
+    return boards.map((board,index) => {
       return (
         <Board
           board={board}
@@ -13,11 +14,12 @@ const BoardList = ({ boards, onBoardSelect }) => {
           title={board.title}
           owner={board.owner}
           onBoardSelect={onBoardSelect}
+          index={index}
         />
       );
     });
   };
-  return <ul>{getBoardList(boards)}</ul>;
+  return <ul className="BoardListArea">{getBoardList(boards)}</ul>;
 };
 
 BoardList.propTypes = {
