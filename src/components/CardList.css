@@ -1,20 +1,28 @@
 .NewCardForm {
     grid-area: 1 / 2 / 3 / 3;
     margin: 50px;
-    border: 2px;
-    border-radius: 3%;
+    border: 3px solid #FDF6F0;
     background-color: #EBCAA8;
     height: 300.36px;
     width: 442.9px;
+    box-shadow: 0px 40px 60px -15px rgba(235, 141, 108, 0.27);
+border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
 
 .NewCardForm form {
-  padding: 30px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .NewCardForm .NewCard-header {
   text-align: center;
   justify-content: center;
+  visibility: hidden;
 }
 
 .NewCardForm div input {
@@ -22,17 +30,25 @@
   padding: 10px;
   border: 0px;
   color: black;
-  float: left;
-  height: 20px;
+  padding-bottom: 30px;
+  width: 80%;
+  
 }
-
+/* #button */
 .NewCardForm input {
     background-color: #643220;
     color: white;
     font-weight: bold;
-    padding: 10px;
-    border: 0px;
-    border-radius: 10%;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    top:60%;
+    float: right;
+
+}
+.NewCardForm input:hover {
+  cursor: pointer;
 }
 
 .CardsListContainer {
@@ -42,6 +58,8 @@
   gap: 0px 0px;
   grid-auto-flow: row;
   height: 100%;
+  background-color: rgb(249, 245, 242);
+  
 }
 
 .cardsContainer {

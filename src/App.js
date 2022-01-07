@@ -83,7 +83,7 @@ const App = () => {
         <main>
           <header className="App-header">Inspir8tion</header>
           <div className="BoardList">
-            <p>Boards</p>
+            <h2>Boards</h2>
             {selectedBoard.id === null ? (
               <p className="SelectBoard">Select a Board from the Board List!</p>
             ) : (

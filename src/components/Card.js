@@ -5,7 +5,6 @@ const Card = (props) => {
   return (
     <ul className="card">
       <li className="message">{props.card.message}</li>
-
       <li className="likes">
         {props.card.likes_count} 
         <span onClick={() => props.onLike(props.card)}> 💚</span>
@@ -16,6 +15,7 @@ const Card = (props) => {
         onClick={() => props.onCardDelete(props.card)}>
           Delete
       </li>
+      
     </ul>
   );
 };
