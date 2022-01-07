@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
+import "./Board.css";
 
 const Board = (props) => {
   return (
-    <li onClick={() => props.onBoardSelect(props.board)}>
-      Title column: {props.title}
+    <li className="ListItem" onClick={() => props.onBoardSelect(props.board)}>
+      {props.index+1}. {props.title}
     </li>
   );
 };

@@ -1,22 +1,29 @@
 .NewCardForm {
     grid-area: 1 / 2 / 3 / 3;
-    margin: 20px;
+    margin: 50px;
     border: 2px;
-    border-radius: 1%;
+    border-radius: 3%;
     background-color: #EBCAA8;
-
+    height: 300.36px;
+    width: 442.9px;
   }
 
 .NewCardForm form {
   padding: 30px;
 }
 
+.NewCardForm .NewCard-header {
+  text-align: center;
+  justify-content: center;
+}
+
 .NewCardForm div input {
   background-color: #EBCAA8;
-  padding: 20px;
+  padding: 10px;
   border: 0px;
   color: black;
   float: left;
+  height: 20px;
 }
 
 .NewCardForm input {
@@ -24,16 +31,30 @@
     color: white;
     font-weight: bold;
     padding: 10px;
-    border: 2px;
+    border: 0px;
     border-radius: 10%;
 }
 
-.CardsContainer {
+.CardsListContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  border: 1px solid red;
   height: 100%;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  padding: 14px 32px;
+}
+
+h2 {
+  height: 25px;
+  margin: 10px;
+  padding: 5px;
+
 }

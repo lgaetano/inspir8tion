@@ -1,12 +1,21 @@
 import PropTypes from "prop-types";
+import './Card.css'
 
 const Card = (props) => {
   return (
-    <ul>
-      <li>Message: {props.card.message}</li>
-      <li>Likes: {props.card.likes_count}</li>
-      <li onClick={() => props.onLike(props.card)}>+1</li>
-      <li onClick={() => props.onCardDelete(props.card)}>Delete</li>
+    <ul className="card">
+      <li className="message">{props.card.message}</li>
+
+      <li className="likes">
+        {props.card.likes_count} 
+        <span onClick={() => props.onLike(props.card)}> 💚</span>
+      </li>
+      {/* <li onClick={() => props.onLike(props.card)}>+1</li> */}
+      <li 
+        className="delete"
+        onClick={() => props.onCardDelete(props.card)}>
+          Delete
+      </li>
     </ul>
   );
 };

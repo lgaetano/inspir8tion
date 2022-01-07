@@ -27,18 +27,21 @@ const NewCardForm = ({ addCardCallback }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <div>
-        {/* <label htmlFor="message">Message:</label> */}
-        <input
-          placeholder="TYPE IN CARD"
-          name="message"
-          value={formFields.message}
-          onChange={onMessageChange}
-        />
-      </div>
-      <input type="submit" value=" +  add card" />
-    </form>
+    <>
+      <form onSubmit={onFormSubmit}>
+        <p class="NewCard-header">New Card</p>
+        <div>
+          {/* <label htmlFor="message">Message:</label> */}
+          <input
+            placeholder="TYPE IN CARD"
+            name="message"
+            value={formFields.message}
+            onChange={onMessageChange}
+          />
+        </div>
+        <input type="submit" value=" +  add card" />
+      </form>
+    </>
   );
 };
 
