@@ -1,4 +1,26 @@
-main ul.tasks__list {
-    width: 50%;
-    margin: auto;
+
+.ListItem {
+  list-style: none;
+  text-align: left;
+  position: static;
+
+  font-family: PublicSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  margin-right: 15vw;
+  
   }
+
+.ListItem:hover {
+  background-color: rgb(248, 194, 172);
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+@font-face {
+  font-family: PublicSans;
+  src: url('./PublicSans-VariableFont_wght.ttf');
+  font-display: swap;
+}
