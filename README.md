@@ -1,8 +1,8 @@
-![Banner](public/Inspir8tion_Board_Banner)
+![Banner](public/Inspir8tion_Board_Banner.png)
 #### Programmers
-<a href="https://github.com/Infernormal">Karina Gorkava</a>
-<a href="https://github.com/tt-ht">Tanya Tran</a>
-<a href="https://github.com/VictoriaDuke">Victoria Duke</a>
+<a href="https://github.com/Infernormal">Karina Gorkava</a>,
+<a href="https://github.com/tt-ht">Tanya Tran</a>,
+<a href="https://github.com/VictoriaDuke">Victoria Duke</a>,
 <a href="https://github.com/lgaetano">Lia Gaetano</a>
 
 Visit at: https://lgaetano.github.io/front-end-inspiration-board/
