@@ -12,4 +12,18 @@
     padding-bottom: 22px;
     height: 311px;
 
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+
+/* Scroll Bar Styling */
+/* width */
+::-webkit-scrollbar {
+    width: .5em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #FDF6F0; 
 }

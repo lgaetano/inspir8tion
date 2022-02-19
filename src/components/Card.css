@@ -42,7 +42,8 @@ li {
     grid-area: 1/1/2/3;
     
     height: 100px;
-    /* overflow: scroll; */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .likes {
@@ -62,4 +63,15 @@ li {
 
 .delete:hover {
     cursor: pointer;
+}
+
+/* Scroll Bar Styling */
+/* width */
+::-webkit-scrollbar {
+    width: .5em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #EBCAA8; 
 }

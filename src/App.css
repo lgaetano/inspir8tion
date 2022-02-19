@@ -80,7 +80,6 @@ h2 {
   grid-area: 2 / 1 / 3 / 2;
   min-height: 100px;
   padding: 10px 10px 10px 10px;
-
 }
 
 .NewBoardForm {
@@ -167,4 +166,25 @@ p {
   font-family: PublicSans;
   src: url('./PublicSans-VariableFont_wght.ttf');
   font-display: swap;
+}
+
+/* Scroll Bar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 2em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #EBCAA8; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #A7DC9D; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #A7DC9D; 
 }
