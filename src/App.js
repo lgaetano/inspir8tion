@@ -78,9 +78,8 @@ const App = () => {
   };
 
   return (
-    <html>
-      <div className="App">
-        <main>
+    <html className="container">
+        <main className="App">
           <header className="App-header">Inspir8tion</header>
           <div className="BoardList">
             <h2>Boards</h2>
@@ -116,7 +115,6 @@ const App = () => {
             )}
           </div>
         </main>
-      </div>
     </html>
   );
 };

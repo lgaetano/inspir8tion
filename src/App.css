@@ -1,9 +1,16 @@
+.container {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+}
+
 .App {
   text-align: center;
-  background-color: #EB8D6C;
+  /* background-color: #EB8D6C; */
 }
 
 .App-logo {
+
   height: 40vmin;
   pointer-events: none;
 }
@@ -15,11 +22,11 @@
 }
 
 .App-header {
-  grid-area: 1 / 1 / 2 / 2;
-  position: absolute;
-  width: 542px;
-  height: 138px;
-  left: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  grid-area: 1 / 1 / 2 / 3;
   font-family: Public Sans;
   color:black;
   font-weight: 900;
@@ -45,26 +52,17 @@
 }
 
 main {
-  /* display: flex;
-  flex-direction: row; */
+  grid-area: 1 / 2 / 2 / 2;
   background-color: #F6F6F6;
   height: auto;
+  width: auto;
   overflow: auto;
-  width: 1320px;
-  left: 60px;
-  top: 96.73px;
   box-shadow: 38px 50px 90px 80px rgba(114, 42, 16, 0.26);
   border-radius: 20px;
-  margin-left: 60px;
-  margin-top: 60px;
-  margin-bottom: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.5fr 2fr 2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
   font-family: PublicSans;
-
 }
 
 html {
