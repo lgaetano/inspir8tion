@@ -1,22 +1,6 @@
 .hidden {
     display: none;
     height: 0;
-    /* padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #EDF8EB;
-    border: 3px solid #A7DC9D;
-    height: 290px;
-    width: 442.9px;
-    box-shadow: 0px 40px 60px -15px rgb(235 141 108 / 27%);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-top: 36px;
-    padding-bottom: 40px;
-} */
 }
 
 .visible {
@@ -36,39 +20,25 @@
     padding-top: 36px;
     padding-bottom: 40px;
 }
-
-/* .NewBoardForm {
-    grid-area: 1 / 2 / 3 / 3;
-    margin: 50px;
-    background: #EDF8EB;
-    border: 3px solid #A7DC9D;
-    height: 300.36px;
-    width: 442.9px;
-    box-shadow: 0px 40px 60px -15px rgba(235, 141, 108, 0.27);
-border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* .SelectBoard {
+    font-size: 18px;
+    background-color: #EB8D6C;
+    padding: 16px;
+    width: 1fr;
+    height: 31px;
+    left: 0px;
+    line-height: 150%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: #391204;
+   
+    margin: 5% 10% 0% 10%;
+    border-top: 2px solid #e76c42;
+    border-left: 2px solid #e76c42;
+    border-right: 2px solid #e76c42;
+    font-family: PublicSans;
+    min-height: 30px;
   } */
-
-/* .NewBoardForm form {
-      padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #EDF8EB;
-    border: 3px solid #A7DC9D;
-    height: 290px;
-    width: 442.9px;
-    box-shadow: 0px 40px 60px -15px rgb(235 141 108 / 27%);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-top: 36px;
-    padding-bottom: 40px;
-} */
-
 
 .NewBoardForm .NewBoard-header {
   text-align: center;

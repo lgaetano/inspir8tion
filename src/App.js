@@ -82,15 +82,13 @@ const App = () => {
         <main className="App">
           <header className="App-header">Inspir8tion</header>
           <div className="BoardList">
-            <h2>Boards</h2>
             {selectedBoard.id === null ? (
-              <p className="SelectBoard">Select a Board from the Board List!</p>
+              <p className="SelectBoard">View an Inspir8tion Board!</p>
             ) : (
-              <p className="SelectedBoard">
-                Selected board: {selectedBoard.title}
-                <br></br>
-                Owner: {selectedBoard.owner}
-              </p>
+              <div className="SelectedBoard">
+                <p>Selected board: <span>{selectedBoard.title}</span></p>
+                <p>Owner: <span>{selectedBoard.owner}</span></p>
+              </div>
             )}
             {status === "Loading..." ? (
               `${status}`
