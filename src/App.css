@@ -79,14 +79,7 @@ h2 {
 }
 
 .NewBoardForm {
-  grid-area: 2 / 2 / 3 / 3; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.NewBoardForm h2 {
-  text-align: center;
-  margin-right: 140px;
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 .CardList {
@@ -124,9 +117,7 @@ span {
   color: #391204;
  
   margin: 5% 10% 0% 10%;
-  border-top: 2px solid #e76c42;
-  border-left: 2px solid #e76c42;
-  border-right: 2px solid #e76c42;
+  border: 2px solid #e76c42;
   font-family: PublicSans;
   min-height: 30px;
 }

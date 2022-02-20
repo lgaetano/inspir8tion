@@ -41,43 +41,35 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
   };
   
     return (
-      <div>
-        <button className='HideButton' onClick={updateBoardFormVisibility}>
-              {buttonName} New Board Form
-        </button>
-      {/* <button onClick={updateBoardFormVisibility}>
-              {buttonName} New Board Form
-        </button> */}
-      {/* <section className='NewBoardForm'> */}
-        <h2>Add New Board:</h2>
+      <>  
+        <h2 className='add-board'>Add A New Board</h2>
         
         <form className={buttonVisible} onSubmit={onFormSubmit}>
-            <div className='TitleInput'>
-                <label htmlFor="title"></label>
-                <input 
-                  class="NewBoardForm__form-input" 
-                  name="title" 
-                  placeholder='TITLE'
-                  value={formFields.title} 
-                  onChange={onTitleChange}
-                  placeholder="BOARD TITLE" />
-            </div>
-            <div className="OwnerInput">
-                <label htmlFor="owner" ></label>
-                <input 
-                  class="NewBoardForm__form-input"
-                  name="owner"
-                  placeholder='OWNER'
-                  value={formFields.owner} 
-                  onChange={onOwnerChange} 
-                  placeholder="OWNER NAME" />
-            </div>
-            <input className='SubmitButton'
+            <label htmlFor="title"></label>
+            <input 
+              className="title-input" 
+              name="title"
+              placeholder='BOARD TITLE'
+              value={formFields.title} 
+              onChange={onTitleChange} />
+              
+            <label htmlFor="owner" ></label>
+            <input 
+              class="owner-input"
+              name="owner"
+              placeholder='OWNER'
+              value={formFields.owner} 
+              onChange={onOwnerChange} />
+              
+            <input className='submit-button'
                 type="submit"
                 value="+ add board" />
         </form>
-      {/* </section> */}
-      </div>
+      
+        <button className='hide-button' onClick={updateBoardFormVisibility}>
+              {buttonName} New Board Form
+        </button>
+      </>
     );
   };
 
