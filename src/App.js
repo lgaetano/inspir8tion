@@ -96,10 +96,7 @@ const App = () => {
               <BoardList boards={boards} onBoardSelect={onBoardSelect} />
             )}
           </div>
-          {/* null above should eventually be setSelectedBoard*/}
-          {/* <div>
-          <Board onBoardSelect={selectedBoard} boards={boards} />
-        </div> */}
+          
           <div className="NewBoardForm">
             <NewBoardForm
               isBoardFormVisible={isBoardFormVisible}
@@ -107,7 +104,7 @@ const App = () => {
               addBoardCallback={addBoardCallback}
             />
           </div>
-          <div className="CardList">
+          <div className="card-list">
             {selectedBoard.id === null ? null : (
               <CardList selectedBoard={selectedBoard} />
             )}

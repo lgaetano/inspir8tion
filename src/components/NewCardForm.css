@@ -1,0 +1,27 @@
+/* .submit-button {
+    margin: 2% 10%;
+    background-color: #A7DC9D;
+    color: #27671B;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    top: 60%;
+    float: right;
+} */
+
+#add-card-button {
+    margin: 2% 10%;
+    background-color: #643220;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    top: 60%;
+    float: right;
+}
+
+#add-card-button:hover {
+    cursor: pointer;
+}  

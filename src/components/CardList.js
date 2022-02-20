@@ -89,7 +89,7 @@ const CardList = (props) => {
 
   return (
       <>
-        <h2>{props.selectedBoard.title}&nbsp;&nbsp;—&nbsp;&nbsp;{props.selectedBoard.owner}</h2>
+        <h2>"{props.selectedBoard.title}"&nbsp;&nbsp;—&nbsp;&nbsp;{props.selectedBoard.owner}</h2>
         <div className="CardsListContainer">
           
           <ul className="cardsContainer">{getCardsList}</ul>
