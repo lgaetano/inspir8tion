@@ -29,8 +29,9 @@ const NewCardForm = ({ addCardCallback }) => {
 
   return (
     <>
-      <form onSubmit={onFormSubmit}>
-          <h2>Add New Card:</h2>
+      <h2 className="add-card">Add New Card</h2>
+
+      <form className="new-card-form" onSubmit={onFormSubmit}>
           <input
             className="card-form-input"
             placeholder="TYPE MESSAGE HERE"
@@ -38,7 +39,7 @@ const NewCardForm = ({ addCardCallback }) => {
             value={formFields.message}
             onChange={onMessageChange}
           />
-        <input id="add-card-button" type="submit" value=" +  add card" />
+        <input className="add-card-button" type="submit" value=" +  add card" />
       </form>
     </>
   );
