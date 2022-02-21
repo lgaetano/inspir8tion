@@ -10,7 +10,6 @@ form {
     font-size: 18px;
     background-color: #A7DC9D;
     padding: 16px;
-    width: 75.5%;
     height: 31px;
     min-height: 30px;
     line-height: 150%;
@@ -34,7 +33,6 @@ form {
     justify-content: center;
     background: #EDF8EB;
     height: 20em;
-    width: 1fr;
     box-shadow: 0px 40px 60px -15px rgb(235 141 108 / 27%);
     border-bottom: 2px solid #27671B;
     border-left: 2px solid #27671B;
@@ -103,7 +101,6 @@ form {
 }  
 
 .hide-button {
-    width: 80%;
     margin: 0% 10%;
     padding: 14px;
     float: right;
