@@ -17,6 +17,11 @@ const App = () => {
     title: "",
   });
 
+  // Change title
+  useEffect(() => {
+    document.title = 'Inspir8tion'
+  }, []);
+
   // Make BoardForm (dis)appear
   const updateBoardFormVisibility = () => {
     if (isBoardFormVisible === true) setBoardForm(false);
