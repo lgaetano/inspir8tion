@@ -10,7 +10,7 @@ form {
     font-size: 18px;
     background-color: #A7DC9D;
     padding: 16px;
-    width: 1fr;
+    width: 75.5%;
     height: 31px;
     min-height: 30px;
     line-height: 150%;
@@ -109,6 +109,7 @@ form {
     float: right;
 
     background-color: #A7DC9D;
+    border-top: none;
     border-bottom: 2px solid #27671B;
     border-left: 2px solid #27671B;
     border-right: 2px solid #27671B;
