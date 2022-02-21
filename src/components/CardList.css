@@ -1,65 +1,38 @@
-.NewCardForm {
-    grid-area: 1 / 2 / 3 / 3;
-    margin: 50px;
-    border: 3px solid #FDF6F0;
-    background-color: #EBCAA8;
-    height: 300.36px;
-    width: 442.9px;
-    box-shadow: 0px 40px 60px -15px rgba(235, 141, 108, 0.27);
-border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-
-.NewCardForm form {
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.board-header {
+  margin: 0%;
+  border: 3px solid #e76c42;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
-.NewCardForm .NewCard-header {
-  text-align: center;
-  justify-content: center;
-  visibility: hidden;
-}
-
-.NewCardForm div input {
-  background-color: #EBCAA8;
-  padding: 10px;
-  border: 0px;
-  color: black;
-  padding-bottom: 30px;
-  width: 80%;
-  
-}
-/* #button */
-.NewCardForm input {
-    background-color: #643220;
-    color: white;
-    font-weight: bold;
-    padding: 14px;
-    border: none;
+/* button */
+.card-form-input {
+    background: #F6F6F6;
+    padding: 10px;
+    margin: 2% 10%;
+    border: 0px;
+    color: black;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
-    position: relative;
-    top:60%;
-    float: right;
-
-}
-.NewCardForm input:hover {
-  cursor: pointer;
+    height: 48px;
+    left: 0px;
+    top: 56px;
 }
 
 .CardsListContainer {
+    margin-bottom: 3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  height: 100%;
-  background-color: rgb(249, 245, 242);
-  
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    height: 100%;
+    background-color: rgb(249, 245, 242);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .cardsContainer {
@@ -68,11 +41,4 @@ border-radius: 12px;
   flex-direction: row;
   align-content: flex-start;
   padding: 14px 32px;
-}
-
-h2 {
-  height: 25px;
-  margin: 10px;
-  padding: 5px;
-
 }

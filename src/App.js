@@ -78,20 +78,17 @@ const App = () => {
   };
 
   return (
-    <html>
-      <div className="App">
-        <main>
+    <html className="container">
+        <main className="App">
           <header className="App-header">Inspir8tion</header>
           <div className="BoardList">
-            <h2>Boards</h2>
             {selectedBoard.id === null ? (
-              <p className="SelectBoard">Select a Board from the Board List!</p>
+              <p className="SelectBoard">View an Inspir8tion Board!</p>
             ) : (
-              <p className="SelectedBoard">
-                Selected board: {selectedBoard.title}
-                <br></br>
-                Owner: {selectedBoard.owner}
-              </p>
+              <div className="SelectedBoard">
+                <p>Selected board: <span>{selectedBoard.title}</span></p>
+                <p>Owner: <span>{selectedBoard.owner}</span></p>
+              </div>
             )}
             {status === "Loading..." ? (
               `${status}`
@@ -99,10 +96,7 @@ const App = () => {
               <BoardList boards={boards} onBoardSelect={onBoardSelect} />
             )}
           </div>
-          {/* null above should eventually be setSelectedBoard*/}
-          {/* <div>
-          <Board onBoardSelect={selectedBoard} boards={boards} />
-        </div> */}
+          
           <div className="NewBoardForm">
             <NewBoardForm
               isBoardFormVisible={isBoardFormVisible}
@@ -110,13 +104,12 @@ const App = () => {
               addBoardCallback={addBoardCallback}
             />
           </div>
-          <div className="CardList">
+          <div className="card-list">
             {selectedBoard.id === null ? null : (
               <CardList selectedBoard={selectedBoard} />
             )}
           </div>
         </main>
-      </div>
     </html>
   );
 };
