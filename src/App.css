@@ -52,7 +52,7 @@
 main {
   grid-area: 1 / 2 / 2 / 2;
   background-color: #F6F6F6;
-  height: 60em;
+  height: 50em;
   width: auto;
   border-radius: 20px;
   display: grid;

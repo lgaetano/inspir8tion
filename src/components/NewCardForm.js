@@ -29,7 +29,7 @@ const NewCardForm = ({ addCardCallback }) => {
 
   return (
     <>
-      <h2 className="add-card">Add New Card</h2>
+      <h2 className="add-card-header">Add New Card</h2>
 
       <form className="new-card-form" onSubmit={onFormSubmit}>
           <input

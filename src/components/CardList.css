@@ -1,5 +1,8 @@
 .board-header {
-  margin-top: 3em;
+  margin: 0%;
+  border: 3px solid #e76c42;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 /* button */

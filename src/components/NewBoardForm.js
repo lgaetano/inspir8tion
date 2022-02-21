@@ -42,33 +42,35 @@ const NewBoardForm = ({addBoardCallback, isBoardFormVisible, updateBoardFormVisi
   
     return (
       <>  
-        <h2 className='add-board'>Add A New Board</h2>
+        <section className="form-section">
+          <h2 className='add-board'>Add A New Board</h2>
+          
+          <form className={buttonVisible} onSubmit={onFormSubmit}>
+              <label htmlFor="title"></label>
+              <input 
+                className="title-input" 
+                name="title"
+                placeholder='BOARD TITLE'
+                value={formFields.title} 
+                onChange={onTitleChange} />
+                
+              <label htmlFor="owner" ></label>
+              <input 
+                class="owner-input"
+                name="owner"
+                placeholder='OWNER'
+                value={formFields.owner} 
+                onChange={onOwnerChange} />
+                
+              <input className='submit-button'
+                  type="submit"
+                  value="+ add board" />
+          </form>
         
-        <form className={buttonVisible} onSubmit={onFormSubmit}>
-            <label htmlFor="title"></label>
-            <input 
-              className="title-input" 
-              name="title"
-              placeholder='BOARD TITLE'
-              value={formFields.title} 
-              onChange={onTitleChange} />
-              
-            <label htmlFor="owner" ></label>
-            <input 
-              class="owner-input"
-              name="owner"
-              placeholder='OWNER'
-              value={formFields.owner} 
-              onChange={onOwnerChange} />
-              
-            <input className='submit-button'
-                type="submit"
-                value="+ add board" />
-        </form>
-      
-        <button className='hide-button' onClick={updateBoardFormVisibility}>
-              {buttonName} New Board Form
-        </button>
+          <button className='hide-button' onClick={updateBoardFormVisibility}>
+                {buttonName} New Board Form
+          </button>
+        </section>
       </>
     );
   };
