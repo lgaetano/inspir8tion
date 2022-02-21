@@ -81,11 +81,11 @@ const App = () => {
     <html className="container">
         <main className="App">
           <header className="App-header">Inspir8tion</header>
-          <div className="BoardList">
+          <div className="board-list">
             {selectedBoard.id === null ? (
-              <p className="SelectBoard">View an Inspir8tion Board!</p>
+              <p className="select-board">View an Inspir8tion Board!</p>
             ) : (
-              <div className="SelectedBoard">
+              <div className="selected-board">
                 <p>Selected board: <span>{selectedBoard.title}</span></p>
                 <p>Owner: <span>{selectedBoard.owner}</span></p>
               </div>
@@ -97,7 +97,7 @@ const App = () => {
             )}
           </div>
           
-          <div className="NewBoardForm">
+          <div className="new-board-form">
             <NewBoardForm
               isBoardFormVisible={isBoardFormVisible}
               updateBoardFormVisibility={updateBoardFormVisibility}

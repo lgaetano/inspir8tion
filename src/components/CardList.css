@@ -22,20 +22,19 @@
     top: 56px;
 }
 
-.CardsListContainer {
+.cards-list-container {
     margin-bottom: 3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
-    height: 100%;
     background-color: rgb(249, 245, 242);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 
-.cardsContainer {
+.cards-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

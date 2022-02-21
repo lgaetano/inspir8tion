@@ -46,12 +46,6 @@ form {
     padding-bottom: 40px;
 }
 
-.NewBoardForm .NewBoard-header {
-  text-align: center;
-  justify-content: center;
-  visibility: hidden;
-}
-
 .title-input {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */

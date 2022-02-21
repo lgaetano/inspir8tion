@@ -66,18 +66,17 @@ html {
   font-family:Public Sans;
 }
 
-.BoardList {
+.board-list {
   grid-area: 2 / 1 / 3 / 2;
   min-height: 100px;
 }
 
-.NewBoardForm {
+.new-board-form {
   grid-area: 2 / 2 / 3 / 3;
 }
 
 .card-list {
   grid-area: 3 / 1 / 4 / 3;
-  border: 40px solid outset rgb(249, 246, 246);
   max-height: 75vh;
   margin: 0%;
 }
@@ -100,7 +99,7 @@ span {
   font-weight: 200;
 }
 
-.SelectBoard {
+.select-board {
   font-size: 18px;
   background-color: #EB8D6C;
   padding: 16px;
@@ -118,7 +117,7 @@ span {
   min-height: 30px;
 }
 
-.SelectedBoard {
+.selected-board {
   font-size: 18px;
   background-color: #EB8D6C;
   padding: 16px;
