@@ -15,6 +15,7 @@ When a user visits our site, they will be able to add a card with an inspiration
 When a user selects a board, they can see all the cards associated with that board. Users can even "+1" the cards that they like!
 
 **Visit at**: https://lgaetano.github.io/front-end-inspiration-board/
+**Back-end repo**: https://github.com/Infernormal/back-end-inspiration-board
 
 ## Tech Stack
 
