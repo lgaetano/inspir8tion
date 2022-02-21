@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/inspir8tion/static/css/main.7d81636f.css",
+    "main.js": "/inspir8tion/static/js/main.ba7c05ef.js",
+    "static/js/787.c0a976fb.chunk.js": "/inspir8tion/static/js/787.c0a976fb.chunk.js",
+    "static/media/PublicSans-VariableFont_wght.ttf": "/inspir8tion/static/media/PublicSans-VariableFont_wght.1db534b6c44e309f0952.ttf",
+    "index.html": "/inspir8tion/index.html",
+    "main.7d81636f.css.map": "/inspir8tion/static/css/main.7d81636f.css.map",
+    "main.ba7c05ef.js.map": "/inspir8tion/static/js/main.ba7c05ef.js.map",
+    "787.c0a976fb.chunk.js.map": "/inspir8tion/static/js/787.c0a976fb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d81636f.css",
+    "static/js/main.ba7c05ef.js"
+  ]
+}
